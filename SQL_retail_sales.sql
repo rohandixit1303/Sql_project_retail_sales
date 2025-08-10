@@ -1,21 +1,4 @@
-select stock_quantity from books
-order by stock_quantity desc;
 
-
-SELECT 
-    stock_quantity
-FROM
-    books
-WHERE
-    stock_quantity = (SELECT 
-            MAX(stock_quantity)
-        FROM
-            books
-        WHERE
-            stock_quantity < (SELECT 
-                    MAX(stock_quantity)
-                FROM
-                    books));
 
 select category,sum(total_sale),count(*) from retail_sales
 
